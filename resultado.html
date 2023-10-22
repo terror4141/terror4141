@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado do Quiz</title>
+    <style>
+        body {
+            background-color: black; /* Define o fundo preto */
+            color: white; /* Define a cor do texto como branco */
+            text-align: center; /* Centraliza o conteúdo */
+            padding: 50px; /* Adiciona um espaço interno de 50px em todas as direções */
+        }
+
+        h1 {
+            font-size: 36px; /* Define o tamanho da fonte para o título */
+        }
+
+        #score {
+            font-size: 48px; /* Define o tamanho da fonte para a pontuação */
+        }
+
+        ul {
+            list-style-type: none; /* Remove as bolinhas das listas */
+            padding: 0; /* Remove o preenchimento padrão das listas */
+        }
+
+        li {
+            font-size: 24px; /* Define o tamanho da fonte para os créditos */
+            margin-bottom: 10px; /* Adiciona margem na parte inferior de cada item da lista */
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: black; padding: 20px; border: 2px solid white; border-radius: 10px;">
+        <h1>Resultado do Quiz</h1>
+        <p>Sua pontuação é: <span id="score">0</span>/10</p>
+        <p>Créditos:</p>
+        <ul>
+            <li>Rafael</li>
+            <li>GRUPO: Rafael, Paulo, Pedro e Pietro</li>
+        </ul>
+    </div>
+
+    <script>
+        // Obtenha a pontuação da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = urlParams.get('score');
+        
+        // Exiba a pontuação na página
+        if (score !== null) {
+            document.getElementById('score').textContent = score;
+        }
+    </script>
+</body>
+</html>
